@@ -109,3 +109,19 @@ extension DOM {
         case missing(String)
     }
 }
+
+extension DOM {
+    
+    public struct Options: OptionSet {
+        public let rawValue: Int
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
+
+        public static let hideUnsupportedFilters = Options(rawValue: 1 << 0)
+
+        public static let `default`: Options = []
+    }
+
+    
+}

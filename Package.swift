@@ -9,7 +9,6 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .executable(name: "swiftdraw", targets: ["CommandLine"]),
 		.library(
             name: "SwiftDraw",
             targets: ["SwiftDraw"]),
@@ -20,19 +19,6 @@ let package = Package(
             name: "SwiftDraw",
             dependencies: [],
 			path: "SwiftDraw"
-		),
-        .executableTarget(
-            name: "CommandLine",
-            dependencies: ["SwiftDraw"],
-            path: "CommandLine"
-		),
-        .testTarget(
-            name: "SwiftDrawTests",
-            dependencies: ["SwiftDraw"],
-            path: "SwiftDrawTests",
-            resources: [
-                .copy("Test.bundle")
-            ]
 		)
     ]
 )
